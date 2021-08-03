@@ -1,0 +1,40 @@
+.collapse-box {
+    border: 1px solid blue;
+    margin: 10px;
+    padding: .5em;
+    border-radius: .5em;
+    .collapse-h2 {
+        font-size: 2em;
+    }
+    .collapse-content {
+        margin-top: 5px;
+        padding: .5em;
+        border: 1px solid #EEE;
+        border-radius: 1em;
+        text-align: left;
+        .collapse--subHeading {
+            color: #aaa;
+            line-height: 1.2;
+            font-size: .7em;
+            margin: 5px auto;
+        }
+        .collapse--p {
+            font-size: .7em;
+            color: #aaa;
+        }
+    }
+    .heading-icon {
+        display: flex;
+        justify-content: space-between;
+        
+        line-height: 1.5;
+        .plus {
+            width: 15px;
+            cursor: pointer;
+        }
+        .active {
+            width: 15px;
+            cursor: pointer;
+        }
+    }
+}

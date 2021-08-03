@@ -205,3 +205,54 @@ html {
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
 }
+
+.collapse-box {
+  border: 1px solid blue;
+  margin: 10px;
+  padding: .5em;
+  border-radius: .5em;
+}
+
+.collapse-box .collapse-h2 {
+  font-size: 2em;
+}
+
+.collapse-box .collapse-content {
+  margin-top: 5px;
+  padding: .5em;
+  border: 1px solid #EEE;
+  border-radius: 1em;
+  text-align: left;
+}
+
+.collapse-box .collapse-content .collapse--subHeading {
+  color: #aaa;
+  line-height: 1.2;
+  font-size: .7em;
+  margin: 5px auto;
+}
+
+.collapse-box .collapse-content .collapse--p {
+  font-size: .7em;
+  color: #aaa;
+}
+
+.collapse-box .heading-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  line-height: 1.5;
+}
+
+.collapse-box .heading-icon .plus {
+  width: 15px;
+  cursor: pointer;
+}
+
+.collapse-box .heading-icon .active {
+  width: 15px;
+  cursor: pointer;
+}
