@@ -2,7 +2,7 @@
     border: 1px solid blue;
     margin: 10px;
     padding: .5em;
-    border-radius: .5em;
+    border-radius: .8em;
     .collapse-h2 {
         font-size: 2em;
     }
@@ -12,14 +12,17 @@
         border: 1px solid #EEE;
         border-radius: 1em;
         text-align: left;
+        .collapse-heading{
+            font-size: 1.4em;
+        }
         .collapse--subHeading {
             color: #aaa;
             line-height: 1.2;
-            font-size: .7em;
+            font-size: 1em;
             margin: 5px auto;
         }
         .collapse--p {
-            font-size: .7em;
+            font-size: 1em;
             color: #aaa;
         }
     }

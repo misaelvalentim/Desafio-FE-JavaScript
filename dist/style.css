@@ -210,7 +210,7 @@ html {
   border: 1px solid blue;
   margin: 10px;
   padding: .5em;
-  border-radius: .5em;
+  border-radius: .8em;
 }
 
 .collapse-box .collapse-h2 {
@@ -225,15 +225,19 @@ html {
   text-align: left;
 }
 
+.collapse-box .collapse-content .collapse-heading {
+  font-size: 1.4em;
+}
+
 .collapse-box .collapse-content .collapse--subHeading {
   color: #aaa;
   line-height: 1.2;
-  font-size: .7em;
+  font-size: 1em;
   margin: 5px auto;
 }
 
 .collapse-box .collapse-content .collapse--p {
-  font-size: .7em;
+  font-size: 1em;
   color: #aaa;
 }
 
@@ -255,4 +259,81 @@ html {
 .collapse-box .heading-icon .active {
   width: 15px;
   cursor: pointer;
+}
+
+.tab-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+}
+
+.tab-section ul {
+  width: 320px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.tab-section ul li {
+  padding: 1em 1.95em;
+}
+
+.tab-section ul li a {
+  text-decoration: none;
+}
+
+.tab-section p {
+  text-align: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 2em;
+  width: 300px;
+  margin: 0 auto;
+}
+
+.tab-section p {
+  border-left: 2px solid blue;
+  border-bottom: 2px solid blue;
+  border-right: 2px solid blue;
+}
+
+.tab-section ul li:nth-child(1) {
+  border-left: 2px solid blue;
+  border-top: 2px solid blue;
+  border-right: 2px solid blue;
+}
+
+.tab-section ul li:nth-child(2) {
+  border-bottom: 2px solid blue;
+}
+
+.tab-section ul li:nth-child(3) {
+  border-bottom: 2px solid blue;
+}
+
+.tab-section ul li:hover {
+  background: blue;
+}
+
+.tab-section ul li:hover a {
+  color: white;
 }
