@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;1,700&family=Raleway:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -50,6 +51,21 @@ table {
 
 html {
   font-size: 62,5%;
+}
+
+p {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+
+h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
 }
 
 .header--nav {
@@ -336,4 +352,132 @@ html {
 
 .tab-section ul li:hover a {
   color: white;
+}
+
+.slider-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 4em;
+}
+
+.slider-section img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.slider-section .slider-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid green;
+  width: 70%;
+  height: 100%;
+  background: #EEE8;
+  border-radius: 1em;
+  position: relative;
+}
+
+@media only screen and (min-width: 600px) {
+  .slider-section .slider-box {
+    width: 90%;
+  }
+}
+
+.slider-section .slider-box .slider-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media only screen and (min-width: 600px) {
+  .slider-section .slider-box .slider-wrapper {
+    padding: 2em 2em 0 2em;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+.slider-section .slider-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  margin: 10px;
+  background: white;
+}
+
+@media only screen and (min-width: 600px) {
+  .slider-section .slider-content {
+    width: 100%;
+    height: 450px;
+  }
+}
+
+.slider-section .slider-content__img {
+  margin: 40px auto;
+  line-height: 1.3;
+}
+
+.slider-section .slider-content__text {
+  opacity: .6;
+}
+
+.slider-section .slider-content__profission {
+  margin: 15px auto;
+  opacity: .6;
+}
+
+.slider-section .point-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: center;
+      align-self: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin: 30px 0;
+}
+
+.slider-section .point-box .point {
+  width: 8px;
+  height: 8px;
+  border: 2px solid gray;
+  border-radius: 50%;
+  margin: 2px;
+  cursor: pointer;
+}
+
+.slider-section .point-box .active {
+  background: gray;
 }
