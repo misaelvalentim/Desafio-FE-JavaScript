@@ -1,7 +1,7 @@
-const btnMenu = document.querySelector('nav button');
+const btnMenu = document.querySelector('.header__nav .btn--menu');
 
 function btnMudarCor() {
-    const nav = document.querySelector('.header--nav')
+    const nav = document.querySelector('.header__nav')
     nav.classList.toggle('active')
     if (toggle) {
         nav.style.transition = 'all 5s';

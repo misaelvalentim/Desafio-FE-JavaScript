@@ -1,6 +1,7 @@
 .collapse-box {
-    border: 1px solid blue;
-    margin: 10px;
+    width: 50%;
+    border: 2px solid #32b3df;
+    margin: 10px auto;
     padding: .5em;
     border-radius: .8em;
     .collapse-h2 {
@@ -15,13 +16,13 @@
         .collapse-heading{
             font-size: 1.4em;
         }
-        .collapse--subHeading {
+        .collapse__subHeading {
             color: #aaa;
             line-height: 1.2;
             font-size: 1em;
             margin: 5px auto;
         }
-        .collapse--p {
+        .collapse__text {
             font-size: 1em;
             color: #aaa;
         }
