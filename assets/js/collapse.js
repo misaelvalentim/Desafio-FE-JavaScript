@@ -1,8 +1,10 @@
-const plus = document.querySelector('.collapse-content-1 .plus');
+const plus = document.querySelector('.collapse-content-1 .plus'),
+    plus2 = document.querySelector('.collapse-content-2 .plus'),
+    plus3 = document.querySelector('.collapse-content-3 .plus');
 
 plus.addEventListener('click', function() {
-    const subHeading = document.querySelector('.collapse-content-1 .collapse--subHeading');
-    const text = document.querySelector('.collapse-content-1 .collapse--p');
+    const subHeading = document.querySelector('.collapse-content-1 .collapse__subHeading');
+    const text = document.querySelector('.collapse-content-1 .collapse__text');
     plus.classList.toggle('active');
    if (plus.classList.contains('active') === true) {
        this.setAttribute('src', 'assets/images/minus.svg');
@@ -15,12 +17,9 @@ plus.addEventListener('click', function() {
    }
 });
 
-
-const plus2 = document.querySelector('.collapse-content-2 .plus');
-
 plus2.addEventListener('click', function() {
-    const subHeading = document.querySelector('.collapse-content-2 .collapse--subHeading');
-    const text = document.querySelector('.collapse-content-2 .collapse--p');
+    const subHeading = document.querySelector('.collapse-content-2 .collapse__subHeading');
+    const text = document.querySelector('.collapse-content-2 .collapse__text');
     plus2.classList.toggle('active');
    if (plus2.classList.contains('active') === true) {
        this.setAttribute('src', 'assets/images/minus.svg');
@@ -33,12 +32,9 @@ plus2.addEventListener('click', function() {
    }
 });
 
-
-const plus3 = document.querySelector('.collapse-content-3 .plus');
-
 plus3.addEventListener('click', function() {
-    const subHeading = document.querySelector('.collapse-content-3 .collapse--subHeading');
-    const text = document.querySelector('.collapse-content-3 .collapse--p');
+    const subHeading = document.querySelector('.collapse-content-3 .collapse__subHeading');
+    const text = document.querySelector('.collapse-content-3 .collapse__text');
     plus3.classList.toggle('active');
    if (plus3.classList.contains('active') === true) {
        this.setAttribute('src', 'assets/images/minus.svg');
