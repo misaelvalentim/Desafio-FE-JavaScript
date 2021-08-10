@@ -1,51 +1,59 @@
-.tab-section{
+.tab-section {
+    background: #FFF;
+    height: 100vh;
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    text-align:center;
-    ul {
-        width: 320px;
-        margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+    &__title {
+        color: #000a;
+        font-weight: 600;
+        text-align: left;
+        width: 300px;
+        font-size: 32px;
+    }
+    &__headings {
+        width: 300px;
         display: flex;
-        justify-content: center;
-        align-items: center;
-        li {
-            padding: 1em 1.95em;
-            a {
-                text-decoration: none;
-            }
+        justify-content: left;
+        margin-top: 15px;
+        color: #333a;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 18px;
+        :nth-of-type(n) {
+            padding: 10px;
+            text-align: left;
+            font-weight: 600;
+        }
+        :nth-of-type(1) {
+            border-bottom: 1px solid #ccc;
+        }
+        :nth-of-type(2) {
+            border-bottom: 1px solid #ccc;
+        }
+        :nth-of-type(3) {
+            width: 100%;
+            border-bottom: 1px solid #ccc;
         }
     }
-    p {
-        text-align: left;
-        display: flex;
-        align-items: center;
-        padding: 2em;
-        width: 300px;
-        margin: 0 auto;
+    &__text {
+     width: 280px;
+     display: flex;
+     justify-content: center;
+     align-self: center;
+     text-align: left;
+     color: #333d;
+     padding: 9px;
+     border-bottom: 1px solid #ccc;
+     border-right: 1px solid #ccc;
+     border-left: 1px solid #ccc;
     }
 }
-.tab-section {
-    p {
-        border-left: 2px solid blue;
-        border-bottom: 2px solid blue;
-        border-right: 2px solid blue;
-    }
-    ul li:nth-child(1){
-        border-left: 2px solid blue;
-        border-top: 2px solid blue;
-        border-right: 2px solid blue;
-    }
-    ul li:nth-child(2){
-        border-bottom: 2px solid blue;
-    }
-    ul li:nth-child(3){
-        border-bottom: 2px solid blue;
-    }
-    ul li:hover {
-        background: blue;
-        a {
-            color: white;
-        }
-    }
+.tab-section__headings p.active {
+    color: rgba(0, 0, 255, 0.658);
+    border-top: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-bottom: none;
+    font-weight: 700;
 }
