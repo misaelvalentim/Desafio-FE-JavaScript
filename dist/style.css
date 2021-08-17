@@ -225,62 +225,135 @@ h3 {
           transform: rotate(-45deg);
 }
 
-.collapse-box {
+.collapse {
   width: 50%;
   border: 2px solid #32b3df;
   margin: 10px auto;
-  padding: .5em;
+  padding: .5em 1em 1em 1em;
   border-radius: .8em;
 }
 
-.collapse-box .collapse-h2 {
+.collapse__title {
   font-size: 2em;
   font-weight: 700;
+  margin-bottom: .5em;
 }
 
-.collapse-box .collapse-content {
-  margin-top: 5px;
-  padding: .5em;
-  border: 1px solid #EEE;
-  border-radius: 1em;
+.collapse__container {
+  padding: 1em;
+  border: 2px solid #EEE;
+  border-radius: .5em;
   text-align: left;
+  margin-bottom: 1em;
 }
 
-.collapse-box .collapse-content .collapse-heading {
+.collapse__container .collapse__plusBox {
+  width: 100%;
   font-size: 1.4em;
   font-weight: 600;
-}
-
-.collapse-box .collapse-content .collapse__subHeading {
-  color: #aaa;
-  line-height: 1.2;
-  font-size: 1em;
-  margin: 5px auto;
-}
-
-.collapse-box .collapse-content .collapse__text {
-  font-size: 1em;
-  color: #aaa;
-}
-
-.collapse-box .heading-icon {
+  cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  line-height: 1.5;
 }
 
-.collapse-box .heading-icon .plus {
-  width: 15px;
-  cursor: pointer;
+.collapse__container .collapse__plusBox .collapse__heading {
+  font-weight: 600;
+  line-height: 46px;
 }
 
-.collapse-box .heading-icon .active {
-  width: 15px;
+.collapse__container .collapse__plusBox .collapse__plus {
+  width: 10px;
+  height: .5em;
+  padding: .5em 0;
+  background: transparent;
   cursor: pointer;
+  z-index: 1;
+  border-right: 4px solid #32b3df;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  -webkit-transition: border 1s ease-in-out;
+  transition: border 1s ease-in-out;
+  position: relative;
+}
+
+.collapse__container .collapse__subHeading {
+  color: #aaa;
+  line-height: 34px;
+  font-size: 1em;
+  margin: 5px auto;
+  display: none;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.collapse__container .collapse__text {
+  font-size: 1em;
+  color: #aaa;
+  line-height: 22px;
+  display: none;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+
+.collapse__plus::after {
+  display: inline-block;
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 5px;
+  background: #32b3df;
+  left: -0.15em;
+  top: .65em;
+  -webkit-transition: background 1s ease-in-out;
+  transition: background 1s ease-in-out;
+}
+
+.collapse__container:hover {
+  background: #32b3df;
+  -webkit-transition: all .2 ease-in-out;
+  transition: all .2 ease-in-out;
+  -webkit-transition: background 1s ease-in-out;
+  transition: background 1s ease-in-out;
+}
+
+.collapse__container:hover .collapse__plus {
+  border-right: 5px solid #FFFFFF;
+}
+
+.collapse__container:hover .collapse__plus::after {
+  background: #FFFFFF;
+}
+
+.collapse__container:hover .collapse__heading, .collapse__container:hover .collapse__text, .collapse__container:hover .collapse__subHeading {
+  color: #FFFFFF;
+}
+
+.collapse__container.collapse__opened {
+  -webkit-transition: height 2s ease-in-out;
+  transition: height 2s ease-in-out;
+}
+
+.collapse__container.collapse__opened .collapse__plus {
+  border: none;
+}
+
+.collapse__container.collapse__opened .collapse__plus::after {
+  background: #F00;
+  left: -.4em;
+}
+
+.collapse__container.collapse__opened .collapse__subHeading, .collapse__container.collapse__opened .collapse__text {
+  display: block;
+}
+
+.collapse__container.collapse__opened .collapse__heading {
+  display: block;
+  -webkit-transition: background 2s ease-in-out;
+  transition: background 2s ease-in-out;
 }
 
 .tab-section {
