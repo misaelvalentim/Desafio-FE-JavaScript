@@ -1,27 +1,55 @@
+::-webkit-scrollbar {
+    width: 15px;
+}
+::-webkit-scrollbar-track {
+    border-radius: 30px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.767);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-track-piece {
+    background: white;
+}
+.header.headerBackground {
+    width: 100%;
+    height: 100vh;
+    background-image: url(/assets/images/headerImg.jpg);
+    background-size: cover;
+    background-position: center;
+}
 .header {
     width: 100%;
+    height: 100%;
     .header__nav {
         width: 100%;
         display: flex;
         align-items: center;
         justify-content: space-around;
-        background: lighten(blue, 15%);
+        background: #808080;
+        box-shadow: 2px 1px 10px 5px #000000;
         color: white;
+        position: fixed;
+        top: 0;
         padding: 1em 0;
-        .header--logo {
+        z-index: 100;
+        @include tablet {
+            padding: 0;
+        }
+        .header__logo {
+            font-size: 2em;
             cursor: pointer;
+            color: #FFFFFF;
+            text-decoration: none;
         }
-        :visited {
-            color: white;
-        }
-        .btn--menu {
+        .header__btn {
             display: flex;
             background: none;
-            color: white;
             border: none;
+            color: white;
             cursor: pointer;
             padding: .5em 1em;
-            text-transform: uppercase;
+            font-size: 1em;
             @include tablet {
                 display: none;
             }
@@ -30,82 +58,90 @@
             display: none;
             @include tablet{
                 display: flex;
+                background: none;
+                color: white;
+                border: none;
+                cursor: pointer;
+                text-transform: uppercase;
             }
-            li {
-                padding: 0 .5em;
-            }
-            li a {
+            &__lists {
+                    padding: 1.5em 1em;
+                }
+            &__items {
+                font-size: 1.5em;
                 text-decoration: none;
                 color: white;
+                @include tablet {   
+                    font-size: 1.3em;
+                }
             }
-
         }
     }
 }
-
-.header__nav.active .menu {
-    display: initial;
-    position: absolute;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    top: 60px;
-    margin: 0 auto;
-    width: 100%;
-    @include tablet {
-        display: none;
-    }
-    :hover {
-        background: lighten(blue, 10%);
-    }
-    li{
-        background: lighten(blue, 10%);
-        text-align: center;
-        margin: 1em;
-        padding: 1em;
-        a {
+.header__nav.active {
+    padding: 1em 0;
+        .menu {
+            display: initial;
+            width: 100%;
+            position: fixed;
+            top: 60px;
+            margin: 0 auto;
+            background: #808080;
+            z-index: 99; 
+            box-shadow: 0px 5px 0px 0px #00000050;
+            @include tablet {
+                display: none;
+            }
+        &__lists{
+            background: #808080;
+            text-align: center;
+            padding: 1em;
+        }
+        &__items {
             margin: 20px;
         }
     }
 }
-.btn--menu--hamburger {
-    content: "hi";
+.header__nav.active .menu .menu__lists:hover {
+    background: darken(#808080, 20%);
 }
-.btn--menu--hamburger {
-    content: "";
+.header__nav .menu .menu__lists:hover {
+    background: darken(#808080, 20%)
+}
+.header__btn--hamburger {
     width: 20px;
-    border-top: 1.5px solid;
-    color: white;
-    margin: 2.5px 0 0 5px;
+    margin-left: 10px;
+    border-top: 3px solid;
     position: relative;
 }
-.header__nav.active .btn--menu--hamburger {
+.header__nav.active .header__btn--hamburger {
     border: transparent;
 }
-.btn--menu--hamburger::after {
+.header__btn--hamburger::after {
     content: "";
     width: 20px;
-    height: 1.5px;
+    height: 3px;
     background: white;
     position: absolute;
     left: 0;
-    margin-top: 1.5px;
-    transition: all .5s;
-}
-.header__nav.active .btn--menu--hamburger::after {
-    transform: rotate(45deg);
     top: 3px;
+    transition: all .5s;
 }
-.btn--menu--hamburger::before {
+.header__nav.active .header__btn--hamburger::after {
+    transform: rotate(45deg);
+    top: 5px;
+}
+.header__btn--hamburger::before {
     content: "";
     width: 20px;
-    height: 1.5px;
+    height: 3px;
     background: white;
     position: absolute;
     left: 0;
-    margin-top: 4.5px;
+    top: 9px;
     transition: all .5s;
 }
-.header__nav.active .btn--menu--hamburger::before {
+.header__nav.active .header__btn--hamburger::before {
     transform: rotate(-45deg);
+    top: 5px;
 }

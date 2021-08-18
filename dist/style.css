@@ -68,8 +68,34 @@ h3 {
   font-weight: 700;
 }
 
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 30px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.767);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track-piece {
+  background: white;
+}
+
+.header.headerBackground {
+  width: 100%;
+  height: 100vh;
+  background-image: url(/assets/images/headerImg.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
 .header {
   width: 100%;
+  height: 100%;
 }
 
 .header .header__nav {
@@ -82,33 +108,43 @@ h3 {
           align-items: center;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  background: #4d4dff;
+  background: #808080;
+  -webkit-box-shadow: 2px 1px 10px 5px #000000;
+          box-shadow: 2px 1px 10px 5px #000000;
   color: white;
+  position: fixed;
+  top: 0;
   padding: 1em 0;
+  z-index: 100;
 }
 
-.header .header__nav .header--logo {
+@media only screen and (min-width: 600px) {
+  .header .header__nav {
+    padding: 0;
+  }
+}
+
+.header .header__nav .header__logo {
+  font-size: 2em;
   cursor: pointer;
+  color: #FFFFFF;
+  text-decoration: none;
 }
 
-.header .header__nav :visited {
-  color: white;
-}
-
-.header .header__nav .btn--menu {
+.header .header__nav .header__btn {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   background: none;
-  color: white;
   border: none;
+  color: white;
   cursor: pointer;
   padding: .5em 1em;
-  text-transform: uppercase;
+  font-size: 1em;
 }
 
 @media only screen and (min-width: 600px) {
-  .header .header__nav .btn--menu {
+  .header .header__nav .header__btn {
     display: none;
   }
 }
@@ -122,34 +158,44 @@ h3 {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    background: none;
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
   }
 }
 
-.header .header__nav .menu li {
-  padding: 0 .5em;
+.header .header__nav .menu__lists {
+  padding: 1.5em 1em;
 }
 
-.header .header__nav .menu li a {
+.header .header__nav .menu__items {
+  font-size: 1.5em;
   text-decoration: none;
   color: white;
 }
 
+@media only screen and (min-width: 600px) {
+  .header .header__nav .menu__items {
+    font-size: 1.3em;
+  }
+}
+
+.header__nav.active {
+  padding: 1em 0;
+}
+
 .header__nav.active .menu {
   display: initial;
-  position: absolute;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  width: 100%;
+  position: fixed;
   top: 60px;
   margin: 0 auto;
-  width: 100%;
+  background: #808080;
+  z-index: 99;
+  -webkit-box-shadow: 0px 5px 0px 0px #00000050;
+          box-shadow: 0px 5px 0px 0px #00000050;
 }
 
 @media only screen and (min-width: 600px) {
@@ -158,71 +204,69 @@ h3 {
   }
 }
 
-.header__nav.active .menu :hover {
-  background: #3333ff;
-}
-
-.header__nav.active .menu li {
-  background: #3333ff;
+.header__nav.active .menu__lists {
+  background: #808080;
   text-align: center;
-  margin: 1em;
   padding: 1em;
 }
 
-.header__nav.active .menu li a {
+.header__nav.active .menu__items {
   margin: 20px;
 }
 
-.btn--menu--hamburger {
-  content: "hi";
+.header__nav.active .menu .menu__lists:hover {
+  background: #4d4d4d;
 }
 
-.btn--menu--hamburger {
-  content: "";
+.header__nav .menu .menu__lists:hover {
+  background: #4d4d4d;
+}
+
+.header__btn--hamburger {
   width: 20px;
-  border-top: 1.5px solid;
-  color: white;
-  margin: 2.5px 0 0 5px;
+  margin-left: 10px;
+  border-top: 3px solid;
   position: relative;
 }
 
-.header__nav.active .btn--menu--hamburger {
+.header__nav.active .header__btn--hamburger {
   border: transparent;
 }
 
-.btn--menu--hamburger::after {
+.header__btn--hamburger::after {
   content: "";
   width: 20px;
-  height: 1.5px;
+  height: 3px;
   background: white;
   position: absolute;
   left: 0;
-  margin-top: 1.5px;
+  top: 3px;
   -webkit-transition: all .5s;
   transition: all .5s;
 }
 
-.header__nav.active .btn--menu--hamburger::after {
+.header__nav.active .header__btn--hamburger::after {
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
-  top: 3px;
+  top: 5px;
 }
 
-.btn--menu--hamburger::before {
+.header__btn--hamburger::before {
   content: "";
   width: 20px;
-  height: 1.5px;
+  height: 3px;
   background: white;
   position: absolute;
   left: 0;
-  margin-top: 4.5px;
+  top: 9px;
   -webkit-transition: all .5s;
   transition: all .5s;
 }
 
-.header__nav.active .btn--menu--hamburger::before {
+.header__nav.active .header__btn--hamburger::before {
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
+  top: 5px;
 }
 
 .collapse {
@@ -265,7 +309,7 @@ h3 {
   line-height: 46px;
 }
 
-.collapse__container .collapse__plusBox .collapse__plus {
+.collapse__container .collapse__plusBox .collapse__iconPlus {
   width: 10px;
   height: .5em;
   padding: .5em 0;
@@ -299,7 +343,7 @@ h3 {
   transition: all .5s ease-in-out;
 }
 
-.collapse__plus::after {
+.collapse__iconPlus::after {
   display: inline-block;
   content: '';
   position: absolute;
@@ -312,36 +356,16 @@ h3 {
   transition: background 1s ease-in-out;
 }
 
-.collapse__container:hover {
-  background: #32b3df;
-  -webkit-transition: all .2 ease-in-out;
-  transition: all .2 ease-in-out;
-  -webkit-transition: background 1s ease-in-out;
-  transition: background 1s ease-in-out;
-}
-
-.collapse__container:hover .collapse__plus {
-  border-right: 5px solid #FFFFFF;
-}
-
-.collapse__container:hover .collapse__plus::after {
-  background: #FFFFFF;
-}
-
-.collapse__container:hover .collapse__heading, .collapse__container:hover .collapse__text, .collapse__container:hover .collapse__subHeading {
-  color: #FFFFFF;
-}
-
 .collapse__container.collapse__opened {
   -webkit-transition: height 2s ease-in-out;
   transition: height 2s ease-in-out;
 }
 
-.collapse__container.collapse__opened .collapse__plus {
+.collapse__container.collapse__opened .collapse__iconPlus {
   border: none;
 }
 
-.collapse__container.collapse__opened .collapse__plus::after {
+.collapse__container.collapse__opened .collapse__iconPlus::after {
   background: #F00;
   left: -.4em;
 }
