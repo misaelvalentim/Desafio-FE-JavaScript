@@ -3,6 +3,7 @@
     border: 2px solid #32b3df;
     margin: 10px auto;
     padding: .5em 1em 1em 1em;
+    margin-top: 100px;
     border-radius: .8em;
     &__title {
         font-size: 2em;
@@ -73,8 +74,7 @@
 // Configuração quando o container receber click
 
 .collapse__container.collapse__opened {
-    
-    transition: height 2s ease-in-out;
+    animation: movingDown 1s forwards;
     .collapse__iconPlus {
         border: none;
     }
@@ -88,5 +88,19 @@
     .collapse__heading {
         display: block;
         transition: background 2s ease-in-out;
+    }
+}
+
+// Animação do accordion's box
+
+@keyframes movingDown {
+    from {
+        
+        transform: translateY(-30%, 0, 0);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(30%, 0, 0);
+        opacity: 1;
     }
 }
